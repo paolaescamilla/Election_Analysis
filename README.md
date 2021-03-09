@@ -1,4 +1,4 @@
-## ElectionAnalysis
+# Election Analysis
 
 ### Project Overview
 A Colorado Board of Elections employee requested support with the following tasks in order to complete the election audit of a recent local congressional election:
