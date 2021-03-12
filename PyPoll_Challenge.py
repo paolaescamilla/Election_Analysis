@@ -19,16 +19,17 @@ candidate_votes = {}
 
 # 1: Create a county list and county votes dictionary.
 county_list=[]
-county_votes_dict={}
+county_votes={}
 
 # Track the winning candidate, vote count and percentage
-winning_candidate = ""
+winning_candidate = ''
 winning_count = 0
 winning_percentage = 0
 
 # 2: Track the largest county and county voter turnout.
-county_largest= ''
-county_voter_turnout= 0
+winning_county= ''
+winning_county_count= 0
+winning_county_percentage = 0
 
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
@@ -41,7 +42,7 @@ with open(file_to_load) as election_data:
     for row in reader:
 
         # Add to the total vote count
-        total_votes = total_votes + 1
+        total_votes =total_votes+ 1
 
         # Get the candidate name from each row.
         candidate_name = row[2]
@@ -70,26 +71,33 @@ with open(file_to_load) as election_data:
             county_list.append(county_name)
        
             # 4c: Begin tracking the county's vote count.
-            county_votes_dict[county_name] = 0
+            county_votes[county_name] = 0
 
         # 5: Add a vote to that county's vote count.
-        county_votes_dict[county_name] += 1
+        county_votes[county_name] += 1
 
+print(county_votes)
 
 # Save the results to our text file.
-with open(file_to_save, "w") as txt_file:
+with open(file_to_save, 'w') as txt_file:
 
-    # Print the final vote count (to terminal)
-    election_results =(f"\nElection Results\n-------------------------\nTotal Votes: {total_votes:,}\n-------------------------\nCounty Votes:")
-    print(election_results, end="")
-
+# Print the final vote count (to terminal)
+    election_results = str(
+        f'\nElection_Results\n'
+        f'-------------------------\n'
+        f'Total Votes:{total_votes:,}\n'
+        f'-------------------------\n'
+        f'County Votes:\n')
+        
+    print(election_results, end='')
+    
     txt_file.write(election_results)
 
     # 6a: Write a for loop to get the county from the county dictionary.
-    for county_name in county_votes_dict:
+    for county_name in county_votes:
 
         # 6b: Retrieve the county vote count.
-        votes=county_votes_dict[county_name]
+        votes=county_votes[county_name]
 
         # 6c: Calculate the percentage of votes for the county.
         vote_percentage=float(votes)/float(total_votes)*100
@@ -97,29 +105,38 @@ with open(file_to_save, "w") as txt_file:
          # 6d: Print the county results to the terminal.
         county_results=(f'{county_name}:{vote_percentage:.1f}% ({votes:,})\n')
 
+        print(county_results)
+
         # 6e: Save the county votes to a text file.
         txt_file.write(county_results)
 
-         # 6f: Write an if statement to determine the winning county and get its vote count.
+        # 6f: Write an if statement to determine the winning county and get its vote count.
+        if (votes > winning_county_count):
 
+           winning_count=votes
+           winning_county_county= county_name
 
     # 7: Print the county with the largest turnout to the terminal.
-    Largest_county_turnout=(
+    winning_county_summary=(
         f'-----\n'
-        f'Largest county turnout: {county_largest}\n'
+        f'Largest county turnout: {winning_county}\n'
         f'-----\n')
+        #f'County votes:\n')
+
+    print(winning_county_summary)
 
     # 8: Save the county with the largest turnout to a text file.
-    txt_file.write(Largest_county_turnout)
+    txt_file.write(winning_county_summary)
 
     # Save the final candidate vote count to the text file.
     for candidate_name in candidate_votes:
 
         # Retrieve vote count and percentage
         votes = candidate_votes.get(candidate_name)
+    
         vote_percentage = float(votes) / float(total_votes) * 100
         candidate_results = (
-            f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            f'{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n')
 
         # Print each candidate's voter count and percentage to the
         # terminal.
@@ -129,18 +146,18 @@ with open(file_to_save, "w") as txt_file:
         txt_file.write(candidate_results)
 
         # Determine winning vote count, winning percentage, and candidate.
-        if (votes > winning_count) and (vote_percentage > winning_percentage):
+        if (votes > winning_count):
             winning_count = votes
             winning_candidate = candidate_name
             winning_percentage = vote_percentage
 
     # Print the winning candidate (to terminal)
     winning_candidate_summary = (
-        f"-------------------------\n"
-        f"Winner: {winning_candidate}\n"
-        f"Winning Vote Count: {winning_count:,}\n"
-        f"Winning Percentage: {winning_percentage:.1f}%\n"
-        f"-------------------------\n")
+        f'-------------------------\n'
+        f'Winner: {winning_candidate}\n'
+        f'Winning Vote Count: {winning_count:,}\n'
+        f'Winning Percentage: {winning_percentage:.1f}%\n'
+        f'-------------------------\n')
     print(winning_candidate_summary)
 
     # Save the winning candidate's name to the text file
