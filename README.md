@@ -42,4 +42,13 @@ This piece of code establishes that if votes are higher in the county voter coun
 
 ### Election Audit Summary
 
+The code developed for this election was successful. 
 
+It is highly recommended to the election commission to keep this script as it can be re used in future election processes. 
+
+The code must be modified in key areas such as:
+  - The establishment of lists,
+  - Definition of appropriate dictionaries,
+  - Definition of tracking counts,
+  - Update of the csv file to work with; and
+  - The display of the results. 
