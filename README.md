@@ -16,7 +16,14 @@ For this election:
 - A total of 369,711 votes were casted for this congressional election.
 
 - The votes were casted in three main counties and the total number of votes and percentage per county was as follows:
-{insert image}
+<img width="574" alt="Screen Shot 2021-03-12 at 9 48 35 PM" src="https://user-images.githubusercontent.com/78698456/111016903-5e87ad00-837e-11eb-873f-f3ae48f3d7ce.png">
+
+<img width="610" alt="Screen Shot 2021-03-12 at 9 54 31 PM" src="https://user-images.githubusercontent.com/78698456/111016905-60ea0700-837e-11eb-902f-3fe935994a86.png">
+
+<img width="360" alt="Screen Shot 2021-03-12 at 9 56 06 PM" src="https://user-images.githubusercontent.com/78698456/111016907-634c6100-837e-11eb-9f71-bb3b3e6a9c97.png">
+
+<img width="204" alt="Screen Shot 2021-03-12 at 9 41 45 PM" src="https://user-images.githubusercontent.com/78698456/111016909-65aebb00-837e-11eb-9f34-da31c518e8d3.png">
+
 
 To get to this result, a dictionary for the counties was established. Then a loop was established to get the county from the dictiionary in order to retrieve the vote count for each. After this, the percentage of votes was calculated for each county and then the instruction to print the county results was established.
 
