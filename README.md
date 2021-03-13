@@ -19,20 +19,19 @@ For this election:
 
 <img width="204" alt="Screen Shot 2021-03-12 at 9 41 45 PM" src="https://user-images.githubusercontent.com/78698456/111016909-65aebb00-837e-11eb-9f34-da31c518e8d3.png">
 
-To get to this result, a dictionary for the counties was established. Then a loop was established to get the county from the dictiionary in order to retrieve the vote count for each. After this, the percentage of votes was calculated for each county and then the instruction to print the county results was established.
+To get to this result, a dictionary for the counties was established. Then a loop was established to get the county from the dictiionary in order to retrieve the vote count for each. After this, the percentage of votes was calculated for each county and then the instruction to print the county results was established. The code resulted as follows:
 
-This section of the code was set as follows:
 <img width="574" alt="Screen Shot 2021-03-12 at 9 48 35 PM" src="https://user-images.githubusercontent.com/78698456/111016903-5e87ad00-837e-11eb-873f-f3ae48f3d7ce.png">
 
 - The county that had the largest number of votes was Denver.
 
-The code used to retrieve this information first wrote an if statement to determine the winning county and get its vote county. The code was set as follows:
+This information was retrieved through an if statement to determine the winning county and get its vote county. The code resulted as follows:
 
 <img width="610" alt="Screen Shot 2021-03-12 at 9 54 31 PM" src="https://user-images.githubusercontent.com/78698456/111016905-60ea0700-837e-11eb-902f-3fe935994a86.png">
 
-This piece of code establishes that if votes are higher in the winning county count then the winning county count will be defined by the number of votes and the winning county will be defined by the county name.
+This piece of code establishes that if votes are higher in the county voter count then the winning county count will be defined by the number of votes and the winning county will be defined by the county name.
 
-- As for the candidates. the breakdown of the number of votes and the percentage of the total votes resulted as follows:
+- As for the candidates, the breakdown of the number of votes and the percentage of the total votes resulted as follows:
 
 <img width="360" alt="Screen Shot 2021-03-12 at 9 56 06 PM" src="https://user-images.githubusercontent.com/78698456/111016907-634c6100-837e-11eb-9f71-bb3b3e6a9c97.png">
 
