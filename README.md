@@ -38,7 +38,8 @@ This piece of code establishes that if votes are higher in the winning county co
 
 - The winner of the election was Diana DeGette who received 73.8% of the vote and 272,892 votes.
 
-{insert image}
+<img width="231" alt="Screen Shot 2021-03-12 at 9 59 12 PM" src="https://user-images.githubusercontent.com/78698456/111016986-db1a8b80-837e-11eb-9555-7056d0510ca7.png">
+
 
 ### Election Audit Summary
 
